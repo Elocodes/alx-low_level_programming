@@ -1,13 +1,16 @@
 #include <stdio.h>
 
-/*prints output using puts() */
+/**
+ * prints output using puts()
+ *
+ */
 
 int main()
 {       
 	
-	char MyStr[] = "\"Programming is like building a multilingual puzzle";
+    char MyStr[] = "\"Programming is like building a multilingual puzzle";
 	
-	puts(MyStr);
+    puts(MyStr);
 
-	return 0;
+    return 0;
 }
