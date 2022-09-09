@@ -1,11 +1,12 @@
 #include <stdio.h>
 
 /**
- * prints output using puts()
+ * main - Entry point
  *
+ * Return: Always 0 (Success)
  */
 
-int main()
+int main(void)
 {       
 	
     char MyStr[] = "\"Programming is like building a multilingual puzzle";
