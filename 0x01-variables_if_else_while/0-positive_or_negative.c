@@ -5,9 +5,9 @@
 /**
  * main - Entry point
  *
- * Return - Always success (0)
+ * Return: Always (0) Success
  */
-int main (void)
+int main(void)
 {
 	int n;
 
@@ -21,9 +21,9 @@ int main (void)
 	{
 		printf("%d is negative\n", n);
 	}
-	else 
+	else
 	{
 		printf("%d is zero\n", n);
 	}
-	return (0);	
+	return (0);
 }
