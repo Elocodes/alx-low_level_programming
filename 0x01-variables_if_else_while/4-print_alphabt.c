@@ -12,7 +12,7 @@ int main(void)
 
 	for (n = 'A'; n <= 'Z'; n++)
 	{
-		if (n != 'E' && n !='Q')
+		if (n != 'E' && n != 'Q')
 		{
 			putchar(tolower(n));
 		}
