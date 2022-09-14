@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * main - Entry Point
+ *
+ * Return: Always (0) Success
+ */
+int Using_putchar(int _putchar)
+{
+	putchar(_putchar);
+	putchar('\n');
+	return (0);
+}
