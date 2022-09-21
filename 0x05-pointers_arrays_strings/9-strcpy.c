@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * *_strcpy - copies str 
- * @src: pointer
- * @dest: pointer
+ * *_strcpy - copies str
+ *@src: pointer
+ *@dest: pointer
  *
- * Return: the pointer to dest 
+ * Return: the pointer to dest
  */
 char *_strcpy(char *dest, char *src)
 {
