@@ -6,7 +6,7 @@ int main (void)
 {
 	char *str;
 
-	str = "hey";
-	_puts(str);
+	str = "hey i am cool";
+	print_rev(str);
 	return (0);
 }
