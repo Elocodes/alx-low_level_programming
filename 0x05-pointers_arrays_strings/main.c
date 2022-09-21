@@ -4,9 +4,9 @@
 
 int main (void)
 {
-	char *str;
+	char s[10] = "my cool";
 
-	str = "hey i am cool";
-	print_rev(str);
+	rev_string(s);
+	printf("%s\n", s);
 	return (0);
 }
