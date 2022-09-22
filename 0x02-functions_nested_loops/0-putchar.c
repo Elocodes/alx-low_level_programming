@@ -1,14 +1,19 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * main - Entry Point
+ * main - prints the word _putchar using the putchar command
  *
  * Return: Always (0) Success
  */
-int Using_putchar(int _putchar)
+int main(void)
 {
-	putchar(_putchar);
-	putchar('\n');
+	char j[] = "_putchar";
+	int c;
+
+	for (c = 0; c <= 8; c++)
+	{
+		_putchar(j[c]);
+	}
+	_putchar('\n');
 	return (0);
 }
