@@ -1,15 +1,24 @@
 #include <string.h>
+#include <stdio.h>
 
 /**
- *_strcmp - function that compares two strings
- *@s1: first string
- *@s2: string that compares with the first
- * Return: returns the difference of their ascii codes, s1 - s2
+ * reverse_array - function that prints the last array as first
+ *@a: pointer to array
+ *@n: length of the array
+ * Return: void
  */
-void reverse_array(int *a, int n);
+void reverse_array(int *a, int n)
 {
-	int compare;
+	int arr_start;
+	int temp;
 
-	compare = strcmp(s1, s2);
-	return (compare);
+	arr_start = 0;
+	while (arr_start < n)
+	{
+		n--;
+		temp = a[arr_start];
+		a[arr_start] = a[n];
+		a[n] = temp;
+		arr_start++;
+	}
 }

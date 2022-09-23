@@ -3,17 +3,20 @@
 
 /**
  **string_toupper - puts string to upper letter
- *@*: string pointer
+ *@s: string pointer
  * Return: 0 success
  */
 char *string_toupper(char *s)
 {
 	int j = 0;
 
-	while (s[j])
+	while (s[j] != '\0')
 	{
-		putchar(toupper(s[j]));
+		if (s[j] >= 'a' && s[j] <= 'z')
+		{
+			s[j] = s[j] - 32;
+		}
 		j++;
 	}
-	return (0);
+	return (s);
 }
