@@ -5,7 +5,7 @@
  *@s: the string word
  *@c: character being looked for
  *
- * Return: returns a pointer value containing the first occurence of the charact
+ * Return: returns a pointer value containing the first occurence of char
  */
 char *_strchr(char *s, char c)
 {
@@ -14,5 +14,3 @@ char *_strchr(char *s, char c)
 	firstSeen = strchr(s, c);
 	return (firstSeen);
 }
-
-
