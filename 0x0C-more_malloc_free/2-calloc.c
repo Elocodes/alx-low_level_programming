@@ -5,27 +5,20 @@
  *@nmemb: array
  *@size: array size
  *
- * Return: returns pointer to memory
+ * Return: returns memory set to zero
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *mem;
+	void *mem;
 	unsigned int i;
 
-	mem = malloc(sizeof(nmemb) * size);
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	mem = malloc(nmemb * size);
 	if (mem == NULL)
 		return (NULL);
-
-	if (nmemb == 0 || size == 0)
-	{
-		return (NULL);
-	}
-	else
-	{
-		for (i = 0; i < size; i++)
-			mem[i] = nmemb;
-		return (mem);
-	}
-	free(mem);
+	for (i = 0; i < (nmemb * size); i++)
+		*((char *)(mem) + i) = 0;
+	return (mem);
 }
 
