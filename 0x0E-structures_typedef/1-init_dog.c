@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <stddef.h>
 
 /**
  * init_dog - function updates the info of dog and dog owner
