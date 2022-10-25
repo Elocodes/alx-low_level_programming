@@ -23,7 +23,7 @@ size_t print_listint(const listint_t *h)
 	{
 		if (h->n == 0)
 		{
-			printf("%s\n", "(noData)");
+			printf("%d\n", 0);
 		}
 		else
 		{
