@@ -15,12 +15,10 @@ hash_node_t *create_new_node(const char *key, const char *value)
 
 	nodeMem = malloc(sizeof(hash_node_t));
 	if (nodeMem == NULL)
-		return (0);
-	nodeMem->key = malloc(strlen(key) + 1);
-	nodeMem->value = malloc(strlen(value) + 1);
-
-	strcpy(nodeMem->key, key);
-	strcpy(nodeMem->value, value);
+		return (NULL);
+	nodeMem->key = strdup(key);
+	nodeMem->value = strdup(value);
+	nodeMem->next = NULL;
 	return (nodeMem);
 }
 
@@ -36,11 +34,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new_KeyAndValue;
 	hash_node_t *check_array;
-	int index;
+	unsigned long int index;
 
-	/*call the key and value function created*/
-
-	new_KeyAndValue = create_new_node(key, value);
+	if (ht == NULL || *key == '\n' || *value == '\n')
+		return (0);
 
 	/*use the key index function to find the index of the key*/
 
@@ -52,6 +49,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (check_array == NULL)
 	{
 		/*then no collision. insert new key and value pair*/
+		new_KeyAndValue = create_new_node(key, value);
 		ht->array[index] = new_KeyAndValue;
 		return (1);
 	}
@@ -60,15 +58,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		/*case1: same key already exists. so update its value*/
 		if (strcmp(check_array->key, key) == 0)
 		{
-			strcpy(ht->array[index]->value, value);
+			check_array->value = strdup(value);
 			return (1);
 		}
 		else
 		{
 			/*some other key exists in the index. insert at top*/
+			new_KeyAndValue = create_new_node(key, value);
 			new_KeyAndValue->next = ht->array[index];
 			ht->array[index] = new_KeyAndValue;
 			return (1);
+		}
 	}
-	return (1);
 }
