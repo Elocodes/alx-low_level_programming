@@ -10,15 +10,18 @@
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *new_node;
-
-	if (head == NULL)
-		return (NULL);
+	dlistint_t *new_node, *temp;
 
 	new_node = malloc(sizeof(dlistint_t));
 	if (new_node == NULL)
 	{
 		return (NULL);
+	}
+	if (*head == NULL)
+	{
+		new_node->next = NULL;
+		*head = new_node;
+		return (*head);
 	}
 	/**
 	 * append new node in front of head making
@@ -28,8 +31,11 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	 * assigned the title of head. now when
 	 * head is called, it prints what is in new_node
 	 */
-	new_node->next = *head;
+	temp = *head;
+	new_node->next = temp;
+	new_node->prev = NULL;
 	new_node->n = n;
+	temp->prev = new_node;
 	*head = new_node;
 	return (*head);
 }
