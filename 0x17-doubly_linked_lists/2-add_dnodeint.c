@@ -26,6 +26,8 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 		*head = new_node;
 		return (*head);
 	}
+	else
+	{
 	/**
 	 * append new node in front of head making
 	 * its "next" a pointer to the former head,
@@ -34,11 +36,12 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	 * assigned the title of head. now when
 	 * head is called, it prints what is in new_node
 	 */
-	temp = *head;
-	new_node->next = temp;
-	new_node->prev = NULL;
-	new_node->n = n;
-	temp->prev = new_node;
-	*head = new_node;
-	return (new_node);
+		temp = *head;
+		new_node->next = temp;
+		new_node->prev = NULL;
+		new_node->n = n;
+		temp->prev = new_node;
+		*head = new_node;
+		return (new_node);
+	}
 }
