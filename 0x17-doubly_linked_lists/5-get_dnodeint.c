@@ -17,20 +17,27 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 		return (NULL);
 
 	count_ptr = head;
+	if (count == index)
+	{
+		return (count_ptr);
+	}
+	else
+	{
 
-	while (count_ptr != NULL)
-	{
-		count_ptr = count_ptr->next;
-		count += 1;
-		if (count == index)
+		while (count_ptr != NULL)
 		{
-			store = count_ptr;
-			break;
+			count_ptr = count_ptr->next;
+			count += 1;
+			if (count == index)
+			{
+				store = count_ptr;
+				break;
+			}
 		}
+		if ((count_ptr->next == NULL) && (count != index))
+		{
+			return (NULL);
+		}
+		return (store);
 	}
-	if ((count_ptr->next == NULL) && (count != index))
-	{
-		return (NULL);
-	}
-	return (store);
 }
