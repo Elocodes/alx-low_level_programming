@@ -14,8 +14,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 	/**
 	 * my_ht - allocates memory space for the entire hash table
 	 * whereby the size will be the input size allocated while
-	 * the array will take up space based on the node items;
-	 * key, value, and next
+	 * the array will take up space based on the number of nodes.
+	 * each node contains items; key/value pair, and next
 	 */
 	my_ht = malloc(sizeof(hash_table_t));
 	if (my_ht == NULL)
